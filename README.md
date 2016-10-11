@@ -8,7 +8,6 @@ This (master) branch contains the following:
 * `design-patterns-for-fast-data.odt`, the original LibreOffice presentation (TBD)
 * `KafkaDemos.xml`, the IntelliJ Live Templates that I use to do the live coding.
 
-The source code for the presentation can be found in the `initial` branch, it is based on https://github.com/iandow/heroku-kafka-demo-java with a few additions including the like service, and some refactorings.  The completed source code can be found in the `complete` branch.
 
 
 ## Abstract:
