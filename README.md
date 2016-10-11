@@ -6,7 +6,7 @@ This (master) branch contains the following:
 
 * `design-patterns-for-fast-data.pdf`, a PDF version of the presentation (TBD)
 * `design-patterns-for-fast-data.odt`, the original LibreOffice presentation (TBD)
-* `KafkaDemos.xml`, the IntelliJ Live Templates that I use to do the live coding.
+* `KafkaDemos.xml`, the IntelliJ Live Templates that I use to do the live coding. (TBD)
 
 
 
