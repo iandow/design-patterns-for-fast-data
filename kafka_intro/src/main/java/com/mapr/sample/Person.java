@@ -1,4 +1,4 @@
-package com.mapr.demo.finserv;
+package com.mapr.sample;
 
 import java.io.Serializable;
 import java.util.LinkedList;

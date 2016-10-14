@@ -1,4 +1,4 @@
-package com.mapr.demo.finserv;
+package com.mapr.sample;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -13,12 +13,12 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 public class PersonConsumer {
     public static void main(String[] args) throws Exception {
 
-        String topic = "persons2";
-        String group = "consumer group";
+        String topic = "pjug";
+        String group = "pjug_group";
         Properties props = new Properties();
         props.put("bootstrap.servers", "ubuntu:9092");
         props.put("group.id", group);
-        props.put("enable.auto.commit", "true");
+        props.put("enable.auto.commit", "false");
         props.put("auto.commit.interval.ms", "1000");
         props.put("session.timeout.ms", "30000");
         props.put("key.deserializer",

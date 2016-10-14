@@ -1,4 +1,4 @@
-package com.mapr.demo.finserv;
+package com.mapr.sample;
 
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -40,7 +40,7 @@ public class PersonProducer {
     public static void main(String[] args) throws IOException {
         Logger.getRootLogger().setLevel(Level.OFF);
 
-        String topic = "persons2";
+        String topic = "pjug";
         System.out.println("Publishing to topic: " + topic);
 
         configureProducer();
