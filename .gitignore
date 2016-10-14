@@ -1,3 +1,5 @@
+.gitignore
+.idea
 */target
 .DS_Store
 */.idea
