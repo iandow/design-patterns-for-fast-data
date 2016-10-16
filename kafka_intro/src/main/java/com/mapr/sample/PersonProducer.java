@@ -68,7 +68,7 @@ public class PersonProducer {
             byte[] value = bos.toByteArray();
 
             String key = Long.toString(System.nanoTime());
-            ProducerRecord rec = new ProducerRecord(topic,key,value);
+            ProducerRecord<String, byte[]> rec = new ProducerRecord<String, byte[]>(topic,key,value);
             producer.send(rec,
                     new Callback() {
                         public void onCompletion(RecordMetadata metadata, Exception e) {
