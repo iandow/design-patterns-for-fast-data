@@ -6,7 +6,6 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
@@ -19,15 +18,16 @@ public class BasicConsumer {
     public static void main(String[] args) throws IOException {
         Logger.getRootLogger().setLevel(Level.OFF);
 
-        System.out.println("Consuming from stream: " + topics);
-        // Specify how to convert serialized bytes for keys and values and kafka server endpoint
+        // configure consumer options
         configureConsumer();
         // Subscribe to one or more topics (pattern matching okay)
+        System.out.println("Consuming from stream: " + topics);
         consumer.subscribe(topics);
+        //poll for messages
         while (true) {
-            // wait up to 1000ms for messages to arrive
             ConsumerRecords<String, String> records = consumer.poll(1000);
             if (records.count() > 0) {
+                // iterate through messages
                 for (ConsumerRecord<String, String> record : records)
                     System.out.printf("\tconsumed: '%s'\n" +
                                     "\t\ttopic = %s\n" +
@@ -46,8 +46,8 @@ public class BasicConsumer {
     public static void configureConsumer() {
         Properties props = new Properties();
         props.put("bootstrap.servers","ubuntu:9092");
-        props.put("client.id", "blahblah");
-        props.put("group.id", "groupblahblah");
+        props.put("client.id", "pjug");
+        props.put("group.id", "pjug_group");
         props.put("key.deserializer",
                 "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("value.deserializer",
