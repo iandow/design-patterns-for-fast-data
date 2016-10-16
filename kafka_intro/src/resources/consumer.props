@@ -1,0 +1,3 @@
+bootstrap.servers=ubuntu:9092
+client.id=pjug
+group.id=pjug_group
