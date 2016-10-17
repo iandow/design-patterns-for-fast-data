@@ -12,9 +12,9 @@ import java.util.Properties;
 import java.util.Random;
 
 public class BasicProducer {
-
-    public static KafkaProducer producer;
-    static long records_processed = 0L;
+    private static Random rand = new Random();
+    private static KafkaProducer producer;
+    private static long records_processed = 0L;
 
     public static void main(String[] args) throws IOException {
         Logger.getRootLogger().setLevel(Level.OFF);
@@ -22,8 +22,6 @@ public class BasicProducer {
         // configure the producer options
         configureProducer();
         String topic = "pjug";
-
-        Random rand = new Random();
 
         while (true) {
             try {
@@ -44,25 +42,20 @@ public class BasicProducer {
                         public void onCompletion(RecordMetadata metadata, Exception e) {
                             long current_time = System.nanoTime();
                             records_processed++;
-//                            System.out.printf("\tkey = '%s'\n" +
-//                                            "\tvalue = %s\n" +
-//                                            "\ttopic = %s\n" +
-//                                            "\tpartition = %d\n" +
-//                                            "\toffset = %d\n",
-//                                    key,
-//                                    value,
-//                                    metadata.topic(),
-//                                    metadata.partition(),
-//                                    metadata.offset());
+                            System.out.printf("\tkey = '%s'\n" +
+                                            "\tvalue = %s\n" +
+                                            "\ttopic = %s\n" +
+                                            "\tpartition = %d\n" +
+                                            "\toffset = %d\n",
+                                    key,
+                                    value,
+                                    metadata.topic(),
+                                    metadata.partition(),
+                                    metadata.offset());
                             System.out.println("Total records published : " + records_processed);
                         }
                     });
-
         }
-
-
-
-
     }
 
     public static void configureProducer() {
