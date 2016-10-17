@@ -7,24 +7,21 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
 public class BasicProducer {
 
     public static KafkaProducer producer;
-    static String topic = "pjug";
     static long records_processed = 0L;
 
     public static void main(String[] args) throws IOException {
         Logger.getRootLogger().setLevel(Level.OFF);
+
+        // configure the producer options
         configureProducer();
+        String topic = "pjug";
 
         Random rand = new Random();
 
@@ -34,10 +31,15 @@ public class BasicProducer {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
+            // create a record to send
             String value = Integer.toString(rand.nextInt(100));
             String key = Long.toString(System.nanoTime());
             ProducerRecord rec = new ProducerRecord(topic,key,value);
+
+            // send the record
             producer.send(rec,
+                    // get an acknowledgement
                     new Callback() {
                         public void onCompletion(RecordMetadata metadata, Exception e) {
                             long current_time = System.nanoTime();
