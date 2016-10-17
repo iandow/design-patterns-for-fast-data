@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.util.Random;
 
 public class BasicProducer {
-    Random rand = new Random();
-    static long records_processed = 0L;
+    private static Random rand = new Random();
+    private static long records_processed = 0L;
 
     public static void main(String[] args) throws IOException {
         Logger.getRootLogger().setLevel(Level.OFF);
