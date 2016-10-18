@@ -38,9 +38,8 @@ public class PersonConsumer {
 
                 //Create object from bytes:
                 ByteArrayInputStream bis = new ByteArrayInputStream(record.value());
-                ObjectInput in = null;
+                ObjectInput in = new ObjectInputStream(bis);
                 try {
-                    in = new ObjectInputStream(bis);
                     Object obj = in.readObject();
                     System.out.println("Consumed object " + obj);
                     Person p2 = (Person)obj;

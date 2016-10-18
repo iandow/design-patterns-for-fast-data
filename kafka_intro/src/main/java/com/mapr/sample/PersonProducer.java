@@ -61,8 +61,7 @@ public class PersonProducer {
 
             //Prepare bytes to send:
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            ObjectOutput out = null;
-            out = new ObjectOutputStream(bos);
+            ObjectOutput out = new ObjectOutputStream(bos);
             out.writeObject(person1);
             out.flush();
             byte[] value = bos.toByteArray();
