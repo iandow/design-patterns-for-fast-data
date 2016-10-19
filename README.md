@@ -1,13 +1,12 @@
 # Design Patterns for working with Fast Data in Kafka
 
-This is repo contains all the resources for my Design Patterns for working with Fast Data in Kafka presentation.
+This is repo contains all the resources for my *Design Patterns for Fast Data* presentation. Switch to the `complete` git branch to see the sample code I used during the presentation.
 
 This (master) branch contains the following:
 
 * `design-patterns-for-fast-data.pdf`, a PDF version of the presentation
 * `design-patterns-for-fast-data.odp`, the original LibreOffice presentation
 
-Switch to the `complete` git branch to see the sample code used during the presentation.
 
 ## Abstract:
 
