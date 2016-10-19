@@ -4,11 +4,10 @@ This is repo contains all the resources for my Design Patterns for working with 
 
 This (master) branch contains the following:
 
-* `design-patterns-for-fast-data.pdf`, a PDF version of the presentation (TBD)
-* `design-patterns-for-fast-data.odt`, the original LibreOffice presentation (TBD)
-* `KafkaDemos.xml`, the IntelliJ Live Templates that I use to do the live coding. (TBD)
+* `design-patterns-for-fast-data.pdf`, a PDF version of the presentation
+* `design-patterns-for-fast-data.odp`, the original LibreOffice presentation
 
-
+Switch to the `complete` git branch to see the sample code used during the presentation.
 
 ## Abstract:
 
